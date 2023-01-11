@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+
+#define P(a, b, c) ((a+b+c)/2.0)
+
+
+#define IS_TR(a, b, c) ((((a+b)>c)&&((b+c)>a)&&((a+c)>b)) ? true : false)
+
+
+#define AREA_TR(a, b, c) ((IS_TR(a,b,c)) ? (sqrt(P(a,b,c)*(P(a,b,c)-a)*(P(a,b,c)-b)*(P(a,b,c)-c))) : 0)
+
+void main()
+{
+	
+	double a, b, c;
+	double area; 
+	double sp; 
+
+	cout << "a = "; cin >> a;
+	cout << "b = "; cin >> b;
+	cout << "c = "; cin >> c;
+
+	sp = P(a, b, c);
+	area = AREA_TR(a, b, c);
+
+	cout << "semiperimeter = " << sp << endl;
+	cout << "area = " << area << endl;
+}
